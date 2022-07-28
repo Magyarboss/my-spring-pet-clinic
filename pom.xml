@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.my_pet_clinic</groupId>
     <artifactId>my-spring-pet-clinic</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>my-spring-pet-clinic</name>
     <description>my-spring-pet-clinic</description>
     <properties>
