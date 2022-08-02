@@ -1,6 +1,6 @@
 package com.my_pet_clinic.myspringpetclinic.model;
 
-public class Speciality extends  BaseEntity{
+public class Specialty extends  BaseEntity{
 
     private String description;
 
