@@ -1,5 +1,6 @@
 package com.my_pet_clinic.myspringpetclinic.controller;
 
+
 import com.my_pet_clinic.myspringpetclinic.model.Owner;
 import com.my_pet_clinic.myspringpetclinic.services.OwnerService;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,8 +59,8 @@ class OwnerControllerTest {
     @Test
     void processFindFormReturnMany() throws Exception {
         when(ownerService.findAllByLastNameLike(anyString()))
-                .thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
-                        Owner.builder().id(2l).build()));
+                .thenReturn(Arrays.asList(Owner.builder().id(1L).build(),
+                        Owner.builder().id(2L).build()));
 
         mockMvc.perform(get("/owners"))
                 .andExpect(status().isOk())
@@ -69,7 +70,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormReturnOne() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1L).build()));
 
         mockMvc.perform(get("/owners"))
                 .andExpect(status().is3xxRedirection())
@@ -78,11 +79,11 @@ class OwnerControllerTest {
 
     @Test
     void displayOwner() throws Exception {
-        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
+        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1L).build());
 
         mockMvc.perform(get("/owners/123"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/ownerDetails"))
-                .andExpect(model().attribute("owner", hasProperty("id", is(1l))));
+                .andExpect(model().attribute("owner", hasProperty("id", is(1L))));
     }
 }
